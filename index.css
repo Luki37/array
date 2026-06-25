@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+.input {
+  gap: 0.4rem;
+  align-items: baseline;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "label1 input1 cont"
+    "label2 input2 delid"
+    "label3 input3 delcont";
+}
+
+#label1,
+#label2,
+#label3 {
+  max-width: fit-content;
+  white-space: nowrap;
+}
+
+#input1,
+#input2,
+#input3 {
+  max-width: 130px;
+}
+
+#content,
+#delid,
+#delcont {
+  width: fit-content;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding-top: 1rem;
+}
+
+.list {
+  display: flex;
+  justify-content: space-around;
+  gap: 3rem;
+  margin-top: 1rem;
+}
+
+#label1 {
+  grid-area: label1;
+}
+
+#label2 {
+  grid-area: label2;
+}
+
+#label3 {
+  grid-area: label3;
+}
+
+#input1 {
+  grid-area: input1;
+}
+
+#input2 {
+  grid-area: input2;
+}
+
+#input3 {
+  grid-area: input3;
+}
+
+#content {
+  grid-area: cont;
+}
+
+#delid {
+  grid-area: delid;
+}
+
+#delcont {
+  grid-area: delcont;
+}
