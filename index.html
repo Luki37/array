@@ -13,7 +13,7 @@
     <div class="input">
       <label for="input1" id="label1">Inhalt einfügen:</label>
       <input id="input1" type="number" />
-      <button id="content">Einfügen</button>
+      <button onclick="content()" id="content">Einfügen</button>
       <label id="label2">ID löschen:</label>
       <input id="input2" type="number" />
       <button id="delid">Löschen</button>
@@ -22,15 +22,11 @@
       <button id="delcont">Löschen</button>
     </div>
     <div class="buttons">
-      <button id="show">Anzeigen</button
+      <button onclick="show()" id="show">Anzeigen</button
       ><button id="multi">Multiplizieren</button><button id="sum">Summe</button>
     </div>
     <div class="list">
-      <ol id="list">
-        <li>1</li>
-        <li>11</li>
-        <li>111</li>
-      </ol>
+      <ol id="list"></ol>
       <p id="result">25</p>
     </div>
 
