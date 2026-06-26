@@ -8,6 +8,12 @@ const wert = document.getElementById("input3");
 const showList = document.getElementById("list");
 const result = document.getElementById("result");
 
+/* add.addEventListener("input", function () {
+  if (this.value.length > 18) {
+    this.value = this.value.slice(0, 18);
+  }
+}); */
+
 /*elemente dazufügen */
 function content() {
   list.push(parseFloat(add.value));
@@ -26,6 +32,18 @@ function delid() {
 }
 
 /*elemente nach inhalt entfernen*/
+
+function delcont() {
+  const index = list.findIndex((element) => element === Number(wert.value));
+  if (index !== -1) {
+    showList.innerHTML = "";
+    list.splice(index, 1);
+    clearInput();
+    show();
+  } else {
+    alert("Diese Zahl existiert nicht auf der Liste.");
+  }
+}
 
 /*anzeigen lassen (evtl. automatisch auf liste)*/
 
