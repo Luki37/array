@@ -8,14 +8,9 @@ const wert = document.getElementById("input3");
 const showList = document.getElementById("list");
 const result = document.getElementById("result");
 
-/* add.addEventListener("input", function () {
-  if (this.value.length > 18) {
-    this.value = this.value.slice(0, 18);
-  }
-}); */
-
 /*elemente dazufügen */
 function content() {
+  /*alert einbauen wenn etwas anderes als eine zahl eingeeben wird*/
   list.push(parseFloat(add.value));
   clearInput();
   showList.innerHTML = "";
@@ -23,8 +18,8 @@ function content() {
 }
 
 /*elemente nach position entfernen*/
-
 function delid() {
+  /*alert einbauen falls nicht existierende position gelöscht werden soll*/
   showList.innerHTML = "";
   list.splice(position.value - 1, 1);
   clearInput();
@@ -32,7 +27,6 @@ function delid() {
 }
 
 /*elemente nach inhalt entfernen*/
-
 function delcont() {
   const index = list.findIndex((element) => element === Number(wert.value));
   if (index !== -1) {
@@ -46,7 +40,6 @@ function delcont() {
 }
 
 /*anzeigen lassen (evtl. automatisch auf liste)*/
-
 function show() {
   list.forEach((number) => {
     const listElement = document.createElement("li");
@@ -56,7 +49,6 @@ function show() {
 }
 
 /* array multiplizieren (mit 2, evtl option beliebige zahl)*/
-
 function multi() {
   showList.innerHTML = "";
   list.map((number) => {
@@ -69,7 +61,6 @@ function multi() {
 }
 
 /*summe des array anzeigen*/
-
 function sum() {
   const resultSum = list.reduce((previousValue, currentValue) => {
     return previousValue + currentValue;
@@ -77,6 +68,7 @@ function sum() {
   result.textContent = "Die Summe ist: " + resultSum;
 }
 
+/*leert die 3 inputfelder*/
 function clearInput() {
   position.value = "";
   add.value = "";
