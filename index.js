@@ -2,12 +2,8 @@
 const list = [];
 
 const add = document.getElementById("input1");
-const delid = document.getElementById("input2");
-const delcont = document.getElementById("input3");
-
-const addbtn = document.getElementById("content");
-const delidbtn = document.getElementById("delid");
-const delcontbtn = document.getElementById("delcont");
+const position = document.getElementById("input2");
+const wert = document.getElementById("input3");
 
 const showList = document.getElementById("list");
 const result = document.getElementById("result");
@@ -15,11 +11,19 @@ const result = document.getElementById("result");
 /*elemente dazufügen */
 function content() {
   list.push(parseFloat(add.value));
-  add.value = "";
+  clearInput();
   showList.innerHTML = "";
+  show();
 }
 
 /*elemente nach position entfernen*/
+
+function delid() {
+  showList.innerHTML = "";
+  list.splice(position.value - 1, 1);
+  clearInput();
+  show();
+}
 
 /*elemente nach inhalt entfernen*/
 
@@ -53,4 +57,10 @@ function sum() {
     return previousValue + currentValue;
   });
   result.textContent = "Die Summe ist: " + resultSum;
+}
+
+function clearInput() {
+  position.value = "";
+  add.value = "";
+  wert.value = "";
 }
