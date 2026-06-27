@@ -12,13 +12,44 @@
     </header>
     <div class="input">
       <label for="input1" id="label1">Inhalt einfügen:</label>
-      <input id="input1" type="text" inputmode="numeric" maxlength="16" />
+      <input
+        id="input1"
+        type="text"
+        inputmode="decimal"
+        pattern="[0-9.]*"
+        oninput="this.value = this.value.replace(/[^0-9.]/g, '')"
+        placeholder="Nur Zahlen erlaubt"
+        maxlength="16"
+      />
+      <!-- this.value bezieht sich auf den Wert des Eingabefeldes
+      .replace zeigt vor dem komma die erlaubten zeichen, 
+      nach dem komma werden durch das '' alle nicht erlaubten ersatzlos gelöscht
+      / und / Umschliessen den Suchbefehl.
+      ^ ist das Negations-Zeichen. Es bedeutet "alles, ausser...".
+      g (global): Sorgt dafür, dass alle falschen Zeichen im Text
+      ersetzt werden, nicht nur das erste. -->
       <button onclick="content()" id="content">Einfügen</button>
       <label id="label2">ID löschen:</label>
-      <input id="input2" type="text" inputmode="numeric" maxlength="16" />
+      <input
+        id="input2"
+        type="text"
+        inputmode="decimal"
+        pattern="[0-9.]*"
+        oninput="this.value = this.value.replace(/[^0-9.]/g, '')"
+        placeholder="Nur Zahlen erlaubt"
+        maxlength="16"
+      />
       <button onclick="delid()" id="delid">Löschen</button>
       <label id="label3">Content löschen:</label>
-      <input id="input3" type="text" inputmode="numeric" maxlength="16" />
+      <input
+        id="input3"
+        type="text"
+        inputmode="decimal"
+        pattern="[0-9.]*"
+        oninput="this.value = this.value.replace(/[^0-9.]/g, '')"
+        placeholder="Nur Zahlen erlaubt"
+        maxlength="16"
+      />
       <button onclick="delcont()" id="delcont">Löschen</button>
     </div>
     <div class="buttons">
