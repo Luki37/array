@@ -41,6 +41,7 @@ function delcont() {
 
 /*anzeigen lassen (evtl. automatisch auf liste)*/
 function show() {
+  showList.innerHTML = "";
   list.forEach((number) => {
     const listElement = document.createElement("li");
     listElement.textContent = number;
