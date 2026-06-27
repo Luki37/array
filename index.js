@@ -11,16 +11,20 @@ const result = document.getElementById("result");
 
 /*elemente dazufügen */
 function content() {
-  list.push(parseFloat(add.value));
-  clearInput();
-  showList.innerHTML = "";
-  show();
+  if (add.value.trim() === "") {
+    alert("Input erforderlich: Gib eine Zahl ein.");
+    return;
+  } else {
+    list.push(parseFloat(add.value));
+    clearInput();
+    showList.innerHTML = "";
+    show();
+  }
 }
 
 /*elemente nach position entfernen*/
 function delid() {
   if (list.length >= parseInt(position.value)) {
-    /*alert einbauen falls nicht existierende position gelöscht werden soll*/
     showList.innerHTML = "";
     list.splice(position.value - 1, 1);
     clearInput();
