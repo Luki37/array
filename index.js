@@ -19,11 +19,15 @@ function content() {
 
 /*elemente nach position entfernen*/
 function delid() {
-  /*alert einbauen falls nicht existierende position gelöscht werden soll*/
-  showList.innerHTML = "";
-  list.splice(position.value - 1, 1);
-  clearInput();
-  show();
+  if (list.length >= parseInt(position.value)) {
+    /*alert einbauen falls nicht existierende position gelöscht werden soll*/
+    showList.innerHTML = "";
+    list.splice(position.value - 1, 1);
+    clearInput();
+    show();
+  } else {
+    alert("Diese Position existiert nicht auf der Liste.");
+  }
 }
 
 /*elemente nach inhalt entfernen*/
